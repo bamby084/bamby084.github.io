@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ACE BeyondGrammar demo</title>
+    <style type="text/css" media="screen">
+      body {
+        overflow: hidden;
+        min-height: 100vh;
+      }
+      #editor {
+        /* margin: 0;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0; 
+        width: 50%;
+        height: 800px;*/
+      }
+
+      .container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: 100vh;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="editor"></div>
+      <div style="margin-left: 20px">
+        <div>
+          <button onclick="extractLatex()">Extract text</button>
+        </div>
+        <div id="latexText" style="overflow: auto;height: 100vh; margin-top: 10px;"/>
+        </div>
+      </div>
+    </div>
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
+    <script src="beyond-grammar-plugin.js"></script>
+    <script src="latex-parser.js"></script>
+    <script>
+      const settings = {
+        service: {
+          apiKey: "E8FEF7AE-3F36-4EAF-A451-456D05E6F2A3",
+        },
+      };
+      window.BeyondGrammar.initBeyondGrammar(settings);
+      var editor = ace.edit("editor");
+      editor.session.setMode("ace/mode/html");
+      // enable emmet on the current editor
+      editor.setOption("enableBeyondGrammar", true);
+      // editor.getSession().setUseWrapMode(true);
+      var pos = editor.selection.getCursor();
+      const text = `The quadratic formula is $$-b \pm \sqrt{b^2 - 4ac} \over 2a$$
+\\bye
+
+\\makeatletter
+ \\newcommand{\\be}{%
+ \\begingroup
+ % \\setlength{\\arraycolsep}{2pt}
+ \\eqnarray%
+ \\@ifstar{\\nonumber}{}%
+  }
+  \\newcommand{\\ee}{\\endeqnarray\endgroup}
+  \\makeatother
+
+ \\begin{equation}
+ x=\\left\{ \\begin{array}{cl}
+ 0 & \\textrm{if }A=\\ldots\\\\
+ 1 & \\textrm{if }B=\\ldots\\\\
+ x & \\textrm{this runs with as much text as you like, but without an raggeright text
+.}\\end{array}\\right.
+ \\end{equation}`;
+      const text2 = `Her tight boots twinged her feet as Jane skaled to the top of the rockface and looked out toward Mount Ranier, her grappling hook’s sharp barb straining against the side of the rock a dozen meters above her head. She was stunned by the beauty of the surrounding scene every time.
+
+It was morning in the mountains of Washington and she squinted in the bright and brilliant sunlight, cursing the fact that she had forgotten her specialized sunglasses on this climb, a rookie mistake she would just have to except. The breeze blew very cold air against her sweat-dotted brow even though the sun was all ready high in the sky. Higher and higher Jane climbed, heart pumping and adrenaline rising as the ground grew smaller and smaller below her until the trees were nothing more than a smattering of many different multicolored jewels in the ground's tan field. Smiling to herself as she reached a stopping point, Jane pushed up onto her knees and stood up straightening her spine so that she was practically walking a long the ledge on the side of the mountain, her body slanted against  the horizon and the extremely blue sky.
+
+Over the months after she had started making this climb a daily ritaull (this was climb number forty two), Jane had grown to treasure these moments when it was just her, her climbing equipment, a very big mountain and gravity; it was like a moving type of meditation that kept her sharp and kept her independence alive. Some mornings it was not easy to get herself out of bed and up the mountain, but she never regretted it once she was on the wall. It was good to remember what she was capable of and the challenge of the climb ensured that her recent change of circumstances didn’t go to her head.
+
+Finally, she hauled herself up over the top of the final ledge, reveling in the feeling of her feet on flat, solid ground once more. From this point of view she had an excellent view to the panoramic rivers, gorgeous mountains, and far off in the distance, the elegant cities that glistened in the sunlight with their tall metal towers and constant streams of cars, massive trucks, people running to and fro. The city was always shocking to her in it’s extreme beauty even when she was surrounded by the majesty of nature.
+
+There was a shrill, loud ring from her pocket. “Oh great,” she exclaimed exasperatedly, and then frowned as she looked down at her cell phone without any hope of maintaining her morning peace.
+
+“Jack,” she said shortly when she reluctantly pushed the button to take the call.
+
+“You sure took long enough to answer my call, you know,” Jack replied sardonically. “Where are you right now? It’s almost 9:00 AM and you’re still not here.”
+
+“I’m taking some flex time,” Jane responded. “Since, you know, we’re allowed to do those types of things.”
+
+Jack scoffed and Jane struggled not to groan. In the six months she’d worked with Jack she had quickly learned that even the tiniest sign that she was not as much of a workaholic as he was would result in a huge attitude. She made the decision to update her resume this daytime and then turned to go back down the mountain.
+
+
+Her tight boots twinged her feet as Jane skaled to the top of the rockface and looked out toward Mount Ranier, her grappling hook’s sharp barb straining against the side of the rock a dozen meters above her head. She was stunned by the beauty of the surrounding scene every time.
+
+It was morning in the mountains of Washington and she squinted in the bright and brilliant sunlight, cursing the fact that she had forgotten her specialized sunglasses on this climb, a rookie mistake she would just have to except. The breeze blew very cold air against her sweat-dotted brow even though the sun was all ready high in the sky. Higher and higher Jane climbed, heart pumping and adrenaline rising as the ground grew smaller and smaller below her until the trees were nothing more than a smattering of many different multicolored jewels in the ground's tan field. Smiling to herself as she reached a stopping point, Jane pushed up onto her knees and stood up straightening her spine so that she was practically walking a long the ledge on the side of the mountain, her body slanted against  the horizon and the extremely blue sky.
+
+Over the months after she had started making this climb a daily ritaull (this was climb number forty two), Jane had grown to treasure these moments when it was just her, her climbing equipment, a very big mountain and gravity; it was like a moving type of meditation that kept her sharp and kept her independence alive. Some mornings it was not easy to get herself out of bed and up the mountain, but she never regretted it once she was on the wall. It was good to remember what she was capable of and the challenge of the climb ensured that her recent change of circumstances didn’t go to her head.
+
+Finally, she hauled herself up over the top of the final ledge, reveling in the feeling of her feet on flat, solid ground once more. From this point of view she had an excellent view to the panoramic rivers, gorgeous mountains, and far off in the distance, the elegant cities that glistened in the sunlight with their tall metal towers and constant streams of cars, massive trucks, people running to and fro. The city was always shocking to her in it’s extreme beauty even when she was surrounded by the majesty of nature.
+
+There was a shrill, loud ring from her pocket. “Oh great,” she exclaimed exasperatedly, and then frowned as she looked down at her cell phone without any hope of maintaining her morning peace.
+
+“Jack,” she said shortly when she reluctantly pushed the button to take the call.
+
+“You sure took long enough to answer my call, you know,” Jack replied sardonically. “Where are you right now? It’s almost 9:00 AM and you’re still not here.”
+
+“I’m taking some flex time,” Jane responded. “Since, you know, we’re allowed to do those types of things.”
+
+Jack scoffed and Jane struggled not to groan. In the six months she’d worked with Jack she had quickly learned that even the tiniest sign that she was not as much of a workaholic as he was would result in a huge attitude. She made the decision to update her resume this evening and then turned to go back down the mountain.
+Her tight boots twinged her feet as Jane skaled to the top of the rockface and looked out toward Mount Ranier, her grappling hook’s sharp barb straining against the side of the rock a dozen meters above her head. She was stunned by the beauty of the surrounding scene every time.
+
+It was morning in the mountains of Washington and she squinted in the bright and brilliant sunlight, cursing the fact that she had forgotten her specialized sunglasses on this climb, a rookie mistake she would just have to except. The breeze blew very cold air against her sweat-dotted brow even though the sun was all ready high in the sky. Higher and higher Jane climbed, heart pumping and adrenaline rising as the ground grew smaller and smaller below her until the trees were nothing more than a smattering of many different multicolored jewels in the ground's tan field. Smiling to herself as she reached a stopping point, Jane pushed up onto her knees and stood up straightening her spine so that she was practically walking a long the ledge on the side of the mountain, her body slanted against  the horizon and the extremely blue sky.
+
+Over the months after she had started making this climb a daily ritaull (this was climb number forty two), Jane had grown to treasure these moments when it was just her, her climbing equipment, a very big mountain and gravity; it was like a moving type of meditation that kept her sharp and kept her independence alive. Some mornings it was not easy to get herself out of bed and up the mountain, but she never regretted it once she was on the wall. It was good to remember what she was capable of and the challenge of the climb ensured that her recent change of circumstances didn’t go to her head.
+
+Finally, she hauled herself up over the top of the final ledge, reveling in the feeling of her feet on flat, solid ground once more. From this point of view she had an excellent view to the panoramic rivers, gorgeous mountains, and far off in the distance, the elegant cities that glistened in the sunlight with their tall metal towers and constant streams of cars, massive trucks, people running to and fro. The city was always shocking to her in it’s extreme beauty even when she was surrounded by the majesty of nature.
+
+There was a shrill, loud ring from her pocket. “Oh great,” she exclaimed exasperatedly, and then frowned as she looked down at her cell phone without any hope of maintaining her morning peace.
+
+“Jack,” she said shortly when she reluctantly pushed the button to take the call.
+
+“You sure took long enough to answer my call, you know,” Jack replied sardonically. “Where are you right now? It’s almost 9:00 AM and you’re still not here.”
+
+“I’m taking some flex time,” Jane responded. “Since, you know, we’re allowed to do those types of things.”
+
+Jack scoffed and Jane struggled not to groan. In the six months she’d worked with Jack she had quickly learned that even the tiniest sign that she was not as much of a workaholic as he was would result in a huge attitude. She made the decision to update her resume this evening and then turned to go back down the mountain.
+Her tight boots twinged her feet as Jane skaled to the top of the rockface and looked out toward Mount Ranier, her grappling hook’s sharp barb straining against the side of the rock a dozen meters above her head. She was stunned by the beauty of the surrounding scene every time.
+
+It was morning in the mountains of Washington and she squinted in the bright and brilliant sunlight, cursing the fact that she had forgotten her specialized sunglasses on this climb, a rookie mistake she would just have to except. The breeze blew very cold air against her sweat-dotted brow even though the sun was all ready high in the sky. Higher and higher Jane climbed, heart pumping and adrenaline rising as the ground grew smaller and smaller below her until the trees were nothing more than a smattering of many different multicolored jewels in the ground's tan field. Smiling to herself as she reached a stopping point, Jane pushed up onto her knees and stood up straightening her spine so that she was practically walking a long the ledge on the side of the mountain, her body slanted against  the horizon and the extremely blue sky.
+
+Over the months after she had started making this climb a daily ritaull (this was climb number forty two), Jane had grown to treasure these moments when it was just her, her climbing equipment, a very big mountain and gravity; it was like a moving type of meditation that kept her sharp and kept her independence alive. Some mornings it was not easy to get herself out of bed and up the mountain, but she never regretted it once she was on the wall. It was good to remember what she was capable of and the challenge of the climb ensured that her recent change of circumstances didn’t go to her head.
+
+Finally, she hauled herself up over the top of the final ledge, reveling in the feeling of her feet on flat, solid ground once more. From this point of view she had an excellent view to the panoramic rivers, gorgeous mountains, and far off in the distance, the elegant cities that glistened in the sunlight with their tall metal towers and constant streams of cars, massive trucks, people running to and fro. The city was always shocking to her in it’s extreme beauty even when she was surrounded by the majesty of nature.
+
+There was a shrill, loud ring from her pocket. “Oh great,” she exclaimed exasperatedly, and then frowned as she looked down at her cell phone without any hope of maintaining her morning peace.
+
+“Jack,” she said shortly when she reluctantly pushed the button to take the call.
+
+“You sure took long enough to answer my call, you know,” Jack replied sardonically. “Where are you right now? It’s almost 9:00 AM and you’re still not here.”
+
+“I’m taking some flex time,” Jane responded. “Since, you know, we’re allowed to do those types of things.”
+
+Jack scoffed and Jane struggled not to groan. In the six months she’d worked with Jack she had quickly learned that even the tiniest sign that she was not as much of a workaholic as he was would result in a huge attitude. She made the decision to update her resume this evening and then turned to go back down the mountain.
+Her tight boots twinged her feet as Jane skaled to the top of the rockface and looked out toward Mount Ranier, her grappling hook’s sharp barb straining against the side of the rock a dozen meters above her head. She was stunned by the beauty of the surrounding scene every time.
+
+It was morning in the mountains of Washington and she squinted in the bright and brilliant sunlight, cursing the fact that she had forgotten her specialized sunglasses on this climb, a rookie mistake she would just have to except. The breeze blew very cold air against her sweat-dotted brow even though the sun was all ready high in the sky. Higher and higher Jane climbed, heart pumping and adrenaline rising as the ground grew smaller and smaller below her until the trees were nothing more than a smattering of many different multicolored jewels in the ground's tan field. Smiling to herself as she reached a stopping point, Jane pushed up onto her knees and stood up straightening her spine so that she was practically walking a long the ledge on the side of the mountain, her body slanted against  the horizon and the extremely blue sky.
+
+Over the months after she had started making this climb a daily ritaull (this was climb number forty two), Jane had grown to treasure these moments when it was just her, her climbing equipment, a very big mountain and gravity; it was like a moving type of meditation that kept her sharp and kept her independence alive. Some mornings it was not easy to get herself out of bed and up the mountain, but she never regretted it once she was on the wall. It was good to remember what she was capable of and the challenge of the climb ensured that her recent change of circumstances didn’t go to her head.
+
+Finally, she hauled herself up over the top of the final ledge, reveling in the feeling of her feet on flat, solid ground once more. From this point of view she had an excellent view to the panoramic rivers, gorgeous mountains, and far off in the distance, the elegant cities that glistened in the sunlight with their tall metal towers and constant streams of cars, massive trucks, people running to and fro. The city was always shocking to her in it’s extreme beauty even when she was surrounded by the majesty of nature.
+
+There was a shrill, loud ring from her pocket. “Oh great,” she exclaimed exasperatedly, and then frowned as she looked down at her cell phone without any hope of maintaining her morning peace.
+
+“Jack,” she said shortly when she reluctantly pushed the button to take the call.
+
+“You sure took long enough to answer my call, you know,” Jack replied sardonically. “Where are you right now? It’s almost 9:00 AM and you’re still not here.”
+
+“I’m taking some flex time,” Jane responded. “Since, you know, we’re allowed to do those types of things.”
+
+Jack scoffed and Jane struggled not to groan. In the six months she’d worked with Jack she had quickly learned that even the tiniest sign that she was not as much of a workaholic as he was would result in a huge attitude. She made the decision to update her resume this evening and then turned to go back down the mountain.
+`;
+      editor.session.insert(pos, text2);
+
+      function extractLatex(){
+        const content = editor.getValue();
+        const output = window.latex.parseLatex(content).text.replaceAll('\n', '<pre></pre>');
+        document.getElementById('latexText').innerHTML = output;
+      }
+    </script>
+  </body>
+</html>
