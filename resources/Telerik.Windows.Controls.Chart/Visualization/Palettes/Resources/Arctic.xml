@@ -1,0 +1,342 @@
+﻿<telerikChart:ChartPalette
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:telerikChart="clr-namespace:Telerik.Windows.Controls.ChartView;assembly=Telerik.Windows.Controls.Chart"
+  xmlns:PresentationOptions="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  mc:Ignorable="PresentationOptions"
+  Name="Arctic">
+
+  <!-- Bar, Area series currently styled by global entries -->
+
+  <telerikChart:ChartPalette.GlobalEntries>
+    <telerikChart:PaletteEntry>
+      <telerikChart:PaletteEntry.Fill>
+        <SolidColorBrush Color="#FF8FCAEE" PresentationOptions:Freeze="True" />
+      </telerikChart:PaletteEntry.Fill>
+    </telerikChart:PaletteEntry>
+    <telerikChart:PaletteEntry>
+      <telerikChart:PaletteEntry.Fill>
+        <SolidColorBrush Color="#FF4CA9D7" PresentationOptions:Freeze="True" />
+      </telerikChart:PaletteEntry.Fill>
+    </telerikChart:PaletteEntry>
+    <telerikChart:PaletteEntry>
+      <telerikChart:PaletteEntry.Fill>
+        <SolidColorBrush Color="#FF1E7BA9" PresentationOptions:Freeze="True" />
+      </telerikChart:PaletteEntry.Fill>
+    </telerikChart:PaletteEntry>
+    <telerikChart:PaletteEntry>
+      <telerikChart:PaletteEntry.Fill>
+        <SolidColorBrush Color="#FFBDC1C5" PresentationOptions:Freeze="True" />
+      </telerikChart:PaletteEntry.Fill>
+    </telerikChart:PaletteEntry>
+    <telerikChart:PaletteEntry>
+      <telerikChart:PaletteEntry.Fill>
+        <SolidColorBrush Color="#FF8C8C8C" PresentationOptions:Freeze="True" />
+      </telerikChart:PaletteEntry.Fill>
+    </telerikChart:PaletteEntry>
+    <telerikChart:PaletteEntry>
+      <telerikChart:PaletteEntry.Fill>
+        <SolidColorBrush Color="#FFCF1C1F" PresentationOptions:Freeze="True" />
+      </telerikChart:PaletteEntry.Fill>
+    </telerikChart:PaletteEntry>
+    <telerikChart:PaletteEntry>
+      <telerikChart:PaletteEntry.Fill>
+        <SolidColorBrush Color="#FFF0484B" PresentationOptions:Freeze="True" />
+      </telerikChart:PaletteEntry.Fill>
+    </telerikChart:PaletteEntry>
+    <telerikChart:PaletteEntry>
+      <telerikChart:PaletteEntry.Fill>
+        <SolidColorBrush Color="#FFFF867F" PresentationOptions:Freeze="True" />
+      </telerikChart:PaletteEntry.Fill>
+    </telerikChart:PaletteEntry>
+  </telerikChart:ChartPalette.GlobalEntries>
+
+  <telerikChart:ChartPalette.SeriesEntries>
+    <telerikChart:PaletteEntryCollection SeriesFamily="Line">
+      <telerikChart:PaletteEntry>
+        <telerikChart:PaletteEntry.Stroke>
+          <SolidColorBrush Color="#FF8FCAEE" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Stroke>
+        <telerikChart:PaletteEntry.Fill>
+          <SolidColorBrush Color="#FF8FCAEE" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Fill>
+      </telerikChart:PaletteEntry>
+      <telerikChart:PaletteEntry>
+        <telerikChart:PaletteEntry.Stroke>
+          <SolidColorBrush Color="#FF4CA9D7" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Stroke>
+        <telerikChart:PaletteEntry.Fill>
+          <SolidColorBrush Color="#FF4CA9D7" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Fill>
+      </telerikChart:PaletteEntry>
+      <telerikChart:PaletteEntry>
+        <telerikChart:PaletteEntry.Stroke>
+          <SolidColorBrush Color="#FF1E7BA9" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Stroke>
+        <telerikChart:PaletteEntry.Fill>
+          <SolidColorBrush Color="#FF1E7BA9" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Fill>
+      </telerikChart:PaletteEntry>
+      <telerikChart:PaletteEntry>
+        <telerikChart:PaletteEntry.Stroke>
+          <SolidColorBrush Color="#FFBDC1C5" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Stroke>
+        <telerikChart:PaletteEntry.Fill>
+          <SolidColorBrush Color="#FFBDC1C5" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Fill>
+      </telerikChart:PaletteEntry>
+      <telerikChart:PaletteEntry>
+        <telerikChart:PaletteEntry.Stroke>
+          <SolidColorBrush Color="#FF8C8C8C" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Stroke>
+        <telerikChart:PaletteEntry.Fill>
+          <SolidColorBrush Color="#FF8C8C8C" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Fill>
+      </telerikChart:PaletteEntry>
+      <telerikChart:PaletteEntry>
+        <telerikChart:PaletteEntry.Stroke>
+          <SolidColorBrush Color="#FFCF1C1F" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Stroke>
+        <telerikChart:PaletteEntry.Fill>
+          <SolidColorBrush Color="#FFCF1C1F" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Fill>
+      </telerikChart:PaletteEntry>
+      <telerikChart:PaletteEntry>
+        <telerikChart:PaletteEntry.Stroke>
+          <SolidColorBrush Color="#FFF0484B" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Stroke>
+        <telerikChart:PaletteEntry.Fill>
+          <SolidColorBrush Color="#FFF0484B" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Fill>
+      </telerikChart:PaletteEntry>
+      <telerikChart:PaletteEntry>
+        <telerikChart:PaletteEntry.Stroke>
+          <SolidColorBrush Color="#FFFF867F" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Stroke>
+        <telerikChart:PaletteEntry.Fill>
+          <SolidColorBrush Color="#FFFF867F" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Fill>
+      </telerikChart:PaletteEntry>
+    </telerikChart:PaletteEntryCollection>
+
+    <telerikChart:PaletteEntryCollection SeriesFamily="Ohlc">
+      <telerikChart:PaletteEntry>
+        <telerikChart:PaletteEntry.Fill>
+          <SolidColorBrush Color="#FFFFFFFF" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Fill>
+        <telerikChart:PaletteEntry.Stroke>
+          <SolidColorBrush Color="#FF000000" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Stroke>
+        <telerikChart:PaletteEntry.AdditionalFill>
+          <SolidColorBrush Color="#FF000000" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.AdditionalFill>
+        <telerikChart:PaletteEntry.AdditionalStroke>
+          <SolidColorBrush Color="#FF000000" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.AdditionalStroke>
+      </telerikChart:PaletteEntry>
+    </telerikChart:PaletteEntryCollection>
+    
+    <telerikChart:PaletteEntryCollection SeriesFamily="Pie">
+      <telerikChart:PaletteEntry>
+        <telerikChart:PaletteEntry.Fill>
+          <SolidColorBrush Color="#FF8FCAEE" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Fill>
+        <telerikChart:PaletteEntry.Stroke>
+          <SolidColorBrush Color="#FFFFFFFF" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Stroke>
+      </telerikChart:PaletteEntry>
+      <telerikChart:PaletteEntry>
+        <telerikChart:PaletteEntry.Fill>
+          <SolidColorBrush Color="#FF4CA9D7" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Fill>
+        <telerikChart:PaletteEntry.Stroke>
+          <SolidColorBrush Color="#FFFFFFFF" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Stroke>
+      </telerikChart:PaletteEntry>
+      <telerikChart:PaletteEntry>
+        <telerikChart:PaletteEntry.Fill>
+          <SolidColorBrush Color="#FF1E7BA9" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Fill>
+        <telerikChart:PaletteEntry.Stroke>
+          <SolidColorBrush Color="#FFFFFFFF" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Stroke>
+      </telerikChart:PaletteEntry>
+      <telerikChart:PaletteEntry>
+        <telerikChart:PaletteEntry.Fill>
+          <SolidColorBrush Color="#FFBDC1C5" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Fill>
+        <telerikChart:PaletteEntry.Stroke>
+          <SolidColorBrush Color="#FFFFFFFF" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Stroke>
+      </telerikChart:PaletteEntry>
+      <telerikChart:PaletteEntry>
+        <telerikChart:PaletteEntry.Fill>
+          <SolidColorBrush Color="#FF8C8C8C" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Fill>
+        <telerikChart:PaletteEntry.Stroke>
+          <SolidColorBrush Color="#FFFFFFFF" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Stroke>
+      </telerikChart:PaletteEntry>
+      <telerikChart:PaletteEntry>
+        <telerikChart:PaletteEntry.Fill>
+          <SolidColorBrush Color="#FFCF1C1F" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Fill>
+        <telerikChart:PaletteEntry.Stroke>
+          <SolidColorBrush Color="#FFFFFFFF" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Stroke>
+      </telerikChart:PaletteEntry>
+      <telerikChart:PaletteEntry>
+        <telerikChart:PaletteEntry.Fill>
+          <SolidColorBrush Color="#FFF0484B" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Fill>
+        <telerikChart:PaletteEntry.Stroke>
+          <SolidColorBrush Color="#FFFFFFFF" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Stroke>
+      </telerikChart:PaletteEntry>
+      <telerikChart:PaletteEntry>
+        <telerikChart:PaletteEntry.Fill>
+          <SolidColorBrush Color="#FFFF867F" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Fill>
+        <telerikChart:PaletteEntry.Stroke>
+          <SolidColorBrush Color="#FFFFFFFF" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Stroke>
+      </telerikChart:PaletteEntry>
+    </telerikChart:PaletteEntryCollection>
+
+    <telerikChart:PaletteEntryCollection SeriesFamily="Funnel">
+      <telerikChart:PaletteEntry>
+        <telerikChart:PaletteEntry.Fill>
+          <SolidColorBrush Color="#FF8FCAEE" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Fill>
+        <telerikChart:PaletteEntry.Stroke>
+          <SolidColorBrush Color="#FFFFFFFF" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Stroke>
+      </telerikChart:PaletteEntry>
+      <telerikChart:PaletteEntry>
+        <telerikChart:PaletteEntry.Fill>
+          <SolidColorBrush Color="#FF4CA9D7" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Fill>
+        <telerikChart:PaletteEntry.Stroke>
+          <SolidColorBrush Color="#FFFFFFFF" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Stroke>
+      </telerikChart:PaletteEntry>
+      <telerikChart:PaletteEntry>
+        <telerikChart:PaletteEntry.Fill>
+          <SolidColorBrush Color="#FF1E7BA9" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Fill>
+        <telerikChart:PaletteEntry.Stroke>
+          <SolidColorBrush Color="#FFFFFFFF" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Stroke>
+      </telerikChart:PaletteEntry>
+      <telerikChart:PaletteEntry>
+        <telerikChart:PaletteEntry.Fill>
+          <SolidColorBrush Color="#FFBDC1C5" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Fill>
+        <telerikChart:PaletteEntry.Stroke>
+          <SolidColorBrush Color="#FFFFFFFF" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Stroke>
+      </telerikChart:PaletteEntry>
+      <telerikChart:PaletteEntry>
+        <telerikChart:PaletteEntry.Fill>
+          <SolidColorBrush Color="#FF8C8C8C" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Fill>
+        <telerikChart:PaletteEntry.Stroke>
+          <SolidColorBrush Color="#FFFFFFFF" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Stroke>
+      </telerikChart:PaletteEntry>
+      <telerikChart:PaletteEntry>
+        <telerikChart:PaletteEntry.Fill>
+          <SolidColorBrush Color="#FFCF1C1F" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Fill>
+        <telerikChart:PaletteEntry.Stroke>
+          <SolidColorBrush Color="#FFFFFFFF" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Stroke>
+      </telerikChart:PaletteEntry>
+      <telerikChart:PaletteEntry>
+        <telerikChart:PaletteEntry.Fill>
+          <SolidColorBrush Color="#FFF0484B" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Fill>
+        <telerikChart:PaletteEntry.Stroke>
+          <SolidColorBrush Color="#FFFFFFFF" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Stroke>
+      </telerikChart:PaletteEntry>
+      <telerikChart:PaletteEntry>
+        <telerikChart:PaletteEntry.Fill>
+          <SolidColorBrush Color="#FFFF867F" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Fill>
+        <telerikChart:PaletteEntry.Stroke>
+          <SolidColorBrush Color="#FFFFFFFF" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Stroke>
+      </telerikChart:PaletteEntry>
+    </telerikChart:PaletteEntryCollection>
+
+    <telerikChart:PaletteEntryCollection SeriesFamily="PolarArea">
+      <telerikChart:PaletteEntry>
+        <telerikChart:PaletteEntry.Fill>
+          <SolidColorBrush Color="#FF8FCAEE" Opacity="0.45" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Fill>
+        <telerikChart:PaletteEntry.Stroke>
+          <SolidColorBrush Color="#FF8FCAEE" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Stroke>
+      </telerikChart:PaletteEntry>
+      <telerikChart:PaletteEntry>
+        <telerikChart:PaletteEntry.Fill>
+          <SolidColorBrush Color="#FF4CA9D7" Opacity="0.45" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Fill>
+        <telerikChart:PaletteEntry.Stroke>
+          <SolidColorBrush Color="#FF4CA9D7" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Stroke>
+      </telerikChart:PaletteEntry>
+      <telerikChart:PaletteEntry>
+        <telerikChart:PaletteEntry.Fill>
+          <SolidColorBrush Color="#FF1E7BA9" Opacity="0.45" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Fill>
+        <telerikChart:PaletteEntry.Stroke>
+          <SolidColorBrush Color="#FF1E7BA9" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Stroke>
+      </telerikChart:PaletteEntry>
+      <telerikChart:PaletteEntry>
+        <telerikChart:PaletteEntry.Fill>
+          <SolidColorBrush Color="#FFBDC1C5" Opacity="0.45" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Fill>
+        <telerikChart:PaletteEntry.Stroke>
+          <SolidColorBrush Color="#FFBDC1C5" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Stroke>
+      </telerikChart:PaletteEntry>
+      <telerikChart:PaletteEntry>
+        <telerikChart:PaletteEntry.Fill>
+          <SolidColorBrush Color="#FF8C8C8C" Opacity="0.45" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Fill>
+        <telerikChart:PaletteEntry.Stroke>
+          <SolidColorBrush Color="#FF8C8C8C" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Stroke>
+      </telerikChart:PaletteEntry>
+      <telerikChart:PaletteEntry>
+        <telerikChart:PaletteEntry.Fill>
+          <SolidColorBrush Color="#FFCF1C1F" Opacity="0.45" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Fill>
+        <telerikChart:PaletteEntry.Stroke>
+          <SolidColorBrush Color="#FFCF1C1F" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Stroke>
+      </telerikChart:PaletteEntry>
+      <telerikChart:PaletteEntry>
+        <telerikChart:PaletteEntry.Fill>
+          <SolidColorBrush Color="#FFF0484B" Opacity="0.45" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Fill>
+        <telerikChart:PaletteEntry.Stroke>
+          <SolidColorBrush Color="#FFF0484B" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Stroke>
+      </telerikChart:PaletteEntry>
+      <telerikChart:PaletteEntry>
+        <telerikChart:PaletteEntry.Fill>
+          <SolidColorBrush Color="#FFFF867F" Opacity="0.45" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Fill>
+        <telerikChart:PaletteEntry.Stroke>
+          <SolidColorBrush Color="#FFFF867F" PresentationOptions:Freeze="True" />
+        </telerikChart:PaletteEntry.Stroke>
+      </telerikChart:PaletteEntry>
+    </telerikChart:PaletteEntryCollection>
+  </telerikChart:ChartPalette.SeriesEntries>
+
+</telerikChart:ChartPalette>
