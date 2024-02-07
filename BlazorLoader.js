@@ -8,7 +8,7 @@ Blazor.start({ // start manually with loadBootResource
 		
 		if(type == "dotnetwasm"){
 			return (async function(){
-				const response = await fetch('https://bamby084.github.io/dotnet.wasm.br',{cache: 'no-cache'});
+				const response = await fetch(defaultUri + '.br',{cache: 'no-cache'});
 				if(!response.ok){
 					throw new Error(response.statusText);
 				}
