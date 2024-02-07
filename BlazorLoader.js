@@ -6,7 +6,7 @@ Blazor.start({ // start manually with loadBootResource
         if (type == "dotnetjs")
             return defaultUri;
 		
-		if(type == "dotnetwasm"){
+		if(type == 'dotnetwasm' || name == 'ISMPayload.dll' || name == 'KendoUI.Grid.dll'){
 			return (async function(){
 				const response = await fetch(defaultUri + '.br',{cache: 'no-cache'});
 				if(!response.ok){
@@ -16,8 +16,8 @@ Blazor.start({ // start manually with loadBootResource
 				const buffer = await response.arrayBuffer();
 				const array = new Int8Array(buffer);
 				const decompressedArray = BrotliDecode(array);
-				
-				return new Response(decompressedArray, {headers: {'content-type': 'application/wasm'}});
+				const contentType = type === 'dotnetwasm'? 'application/wasm': 'application/octet-stream';
+				return new Response(decompressedArray, {headers: {'content-type': contentType}});
 			})();
 		}
 		
