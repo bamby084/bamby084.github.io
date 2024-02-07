@@ -6,7 +6,7 @@ Blazor.start({ // start manually with loadBootResource
         if (type == "dotnetjs")
             return defaultUri;
 		
-		if(type == 'dotnetwasm' || name == 'ISMPayload.dll' || name == 'KendoUI.Grid.dll'){
+		if(type == 'dotnetwasm'){
 			return (async function(){
 				const response = await fetch(defaultUri + '.br',{cache: 'no-cache'});
 				if(!response.ok){
