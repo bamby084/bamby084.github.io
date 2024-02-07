@@ -21,11 +21,7 @@ Blazor.start({ // start manually with loadBootResource
 			})();
 		}
 		
-        var fetchResources = fetch(defaultUri, {
-            cache: 'no-cache',
-            integrity: integrity,
-            headers: { 'MyCustomHeader': 'My custom value' }
-        });
+        var fetchResources = fetch(defaultUri, {cache: 'no-cache'});
 
 
         allResourcesBeingLoaded.push(fetchResources);
