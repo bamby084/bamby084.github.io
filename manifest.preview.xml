@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" 
+  xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
+  <Id>4abdcba1-02f2-4e7c-901b-994ea2451d5b</Id>
+  <Version>3.1.4.0</Version>
+  <ProviderName>BriefCatch LLC</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="BriefCatch - PREVIEW"/>
+  <Description DefaultValue="Expert legal editing by your side."/>
+  <IconUrl DefaultValue="https://briefcatch-pre.web.app/assets/icon-32-preview.png"/>
+  <HighResolutionIconUrl DefaultValue="https://briefcatch-pre.web.app/assets/icon-64-preview.png"/>
+  <SupportUrl DefaultValue="https://briefcatch.com/help"/>
+  <AppDomains>
+    <AppDomain>https://briefcatch.com</AppDomain>
+  </AppDomains>
+  <Hosts>
+    <Host Name="Document"/>
+  </Hosts>
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://briefcatch-pre.web.app/taskpane.html"/>
+  </DefaultSettings>
+  <Permissions>ReadWriteDocument</Permissions>
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Hosts>
+      <Host xsi:type="Document">
+        <Runtimes>
+          <Runtime resid="Taskpane.Url" lifetime="long" />
+        </Runtimes>
+        <DesktopFormFactor>
+          <GetStarted>
+            <Title resid="GetStarted.Title"/>
+            <Description resid="GetStarted.Description"/>
+            <LearnMoreUrl resid="GetStarted.LearnMoreUrl"/>
+          </GetStarted>
+
+          <FunctionFile resid="Taskpane.Url"/>
+
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <CustomTab id="BriefCatch.Ribbon">
+              <!--Common group-->
+              <Group id="BriefCatch.CommonGroup">
+                <Label resid="BC.CommonGroup.Label"/>
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16x16"/>
+                  <bt:Image size="32" resid="Icon.32x32"/>
+                  <bt:Image size="80" resid="Icon.80x80"/>
+                </Icon>
+
+                <!--Review button-->
+                <Control xsi:type="Button" id="BriefCatch.ReviewButton">
+                  <Label resid="BC.ReviewButton.Label"/>
+                  <Supertip>
+                    <Title resid="BC.ReviewButton.Label"/>
+                    <Description resid="BC.ReviewButton.Tooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="review-16"/>
+                    <bt:Image size="32" resid="review-32"/>
+                    <bt:Image size="80" resid="review-80"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>showReview</FunctionName>
+                  </Action>
+                </Control>
+
+                <!--Report button-->
+                <Control xsi:type="Button" id="BriefCatch.ReportButton">
+                  <Label resid="BC.ReportButton.Label"/>
+                  <Supertip>
+                    <Title resid="BC.ReportButton.Label"/>
+                    <Description resid="BC.ReportButton.Tooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="trending-up-16"/>
+                    <bt:Image size="32" resid="trending-up-32"/>
+                    <bt:Image size="80" resid="trending-up-80"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>showReport</FunctionName>
+                  </Action>
+                </Control>
+
+                <!--Chat button-->
+                <Control xsi:type="Button" id="BriefCatch.ChatButton">
+                  <Label resid="BC.ChatButton.Label"/>
+                  <Supertip>
+                    <Title resid="BC.ChatButton.Label"/>
+                    <Description resid="BC.ChatButton.Tooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="chat-16"/>
+                    <bt:Image size="32" resid="chat-32"/>
+                    <bt:Image size="80" resid="chat-80"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>showBriefChat</FunctionName>
+                  </Action>
+                </Control>
+
+                <!--Settings button-->
+                <Control xsi:type="Button" id="BriefCatch.SettingsButton">
+                  <Label resid="BC.SettingsButton.Label"/>
+                  <Supertip>
+                    <Title resid="BC.SettingsButton.Label"/>
+                    <Description resid="BC.SettingsButton.Tooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="settings-16"/>
+                    <bt:Image size="32" resid="settings-32"/>
+                    <bt:Image size="80" resid="settings-80"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>showSettings</FunctionName>
+                  </Action>
+                </Control>
+              </Group>
+
+              <Label resid="BC.Ribbon.Label"/>
+            </CustomTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+    <Resources>
+      <bt:Images>
+        <bt:Image id="Icon.16x16" DefaultValue="https://briefcatch-pre.web.app/assets/icon-16-preview.png"/>
+        <bt:Image id="Icon.32x32" DefaultValue="https://briefcatch-pre.web.app/assets/icon-32-preview.png"/>
+        <bt:Image id="Icon.80x80" DefaultValue="https://briefcatch-pre.web.app/assets/icon-80-preview.png"/>
+        <bt:Image id="review-16" DefaultValue="https://briefcatch-pre.web.app/assets/icon-review-16.png"/>
+        <bt:Image id="review-32" DefaultValue="https://briefcatch-pre.web.app/assets/icon-review-32.png"/>
+        <bt:Image id="review-80" DefaultValue="https://briefcatch-pre.web.app/assets/icon-review-80.png"/>
+        <bt:Image id="trending-up-16" DefaultValue="https://briefcatch-pre.web.app/assets/icon-trending-up-16.png"/>
+        <bt:Image id="trending-up-32" DefaultValue="https://briefcatch-pre.web.app/assets/icon-trending-up-32.png"/>
+        <bt:Image id="trending-up-80" DefaultValue="https://briefcatch-pre.web.app/assets/icon-trending-up-80.png"/>
+        <bt:Image id="chat-16" DefaultValue="https://briefcatch-pre.web.app/assets/icon-chat-16.png"/>
+        <bt:Image id="chat-32" DefaultValue="https://briefcatch-pre.web.app/assets/icon-chat-32.png"/>
+        <bt:Image id="chat-80" DefaultValue="https://briefcatch-pre.web.app/assets/icon-chat-80.png"/>
+        <bt:Image id="settings-16" DefaultValue="https://briefcatch-pre.web.app/assets/icon-settings-16.png"/>
+        <bt:Image id="settings-32" DefaultValue="https://briefcatch-pre.web.app/assets/icon-settings-32.png"/>
+        <bt:Image id="settings-80" DefaultValue="https://briefcatch-pre.web.app/assets/icon-settings-80.png"/>
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://briefcatch.com/"/>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://briefcatch-pre.web.app/taskpane.html"/>
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="GetStarted.Title" DefaultValue="Get started with BriefCatch!"/>
+        <bt:String id="BC.Ribbon.Label" DefaultValue="BriefCatch 4"/>
+        <bt:String id="BC.CommonGroup.Label" DefaultValue="Common"/>
+        <bt:String id="BC.ReviewButton.Label" DefaultValue="Review"/>
+        <bt:String id="BC.ReportButton.Label" DefaultValue="Report"/>
+        <bt:String id="BC.ChatButton.Label" DefaultValue="Chat"/>
+        <bt:String id="BC.SettingsButton.Label" DefaultValue="Settings"/>
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="GetStarted.Description" DefaultValue="BriefCatch is ready to bring out your best legal writing. Click on the icon to get started."/>
+        <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Click to open BriefCatch"/>
+        <bt:String id="BC.ReviewButton.Tooltip" DefaultValue="Review your suggestions."/>
+        <bt:String id="BC.ReportButton.Tooltip" DefaultValue="View your document reports."/>
+        <bt:String id="BC.ChatButton.Tooltip" DefaultValue="Chat with BriefCatch AI."/>
+        <bt:String id="BC.SettingsButton.Tooltip" DefaultValue="Open BriefCatch settings."/>
+      </bt:LongStrings>
+    </Resources>
+    <WebApplicationInfo>
+      <Id>e6d4ae40-892a-456e-ad92-7332124ce6c0</Id>
+      <Resource>api://briefcatch-pre.web.app/e6d4ae40-892a-456e-ad92-7332124ce6c0</Resource>
+      <Scopes>
+          <Scope>profile</Scope>
+          <Scope>openid</Scope>
+          <Scope>email</Scope>
+      </Scopes>
+    </WebApplicationInfo>
+  </VersionOverrides>
+</OfficeApp>
